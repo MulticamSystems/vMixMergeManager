@@ -1,0 +1,69 @@
+.btn-outline-secondary {
+    color: #fff !important;
+    border-color: #6c757d;
+    background-color: #772ce8 !important;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #772ce8 !important;
+    border-color: #6c757d;
+}
+
+.col-12.centeredButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+form#loginForm {/* padding-top: 1%; */display: none;}
+
+div#messageBox {
+    padding-top: 2%;
+    /* width: 100%; */
+}
+
+.col-12.forgotPassword {
+    display: flex;
+    justify-content: center;
+    /* padding-top: 10%; */
+}
+
+form#signUpForm {
+    /* padding-top: 1%; */
+    display: none;
+}
+
+.t3Logo {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+}
+
+div#mainDisplay {
+    align-items: center;
+}
+
+.footer-copyright.text-center.py-3.copyrightText {
+    color: white;
+    text-align: left !important;
+    margin-left: 1%;
+}
+
+footer.twitchPurple {
+    background-color: #fff!important;
+    /* flex: 1; */
+}
+
+nav.twitchPurple {
+    background-color: #fff!important;
+    /* flex: 1; */
+}
+
+form#provideName {
+    display: none;
+}
+
+.callerBtn {
+    margin: 0 15px;
+}

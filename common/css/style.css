@@ -1,0 +1,1187 @@
+* {font-family: sans-serif;white-space: nowrap;}
+
+body, html {height: 100%;width: 100%;margin: 0;/* overflow: hidden; */}
+
+#header {display: flex;justify-content: space-between;align-items: center;background-color: #772ce8;color: #000;z-index: 10;}
+
+#outerContainer {display: flex;height: 100%;width: 100%;flex-flow: column;justify-content: space-evenly;/* overflow: hidden; */position: relative;}
+
+#footer {display: flex;justify-content: space-between;padding: 0 1%;align-items: center;background-color: #772ce8;color: white;box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, .5);z-index: 9;flex: 1;position: absolute;width: 100%;height: 5%;bottom: 0;}
+
+@font-face {
+    font-family: RoobertRegular;
+    src: url(../fonts/RoobertTW-Regular.woff) format('truetype');
+}
+
+#mainDisplay {
+    display: flex;
+    flex-direction: column;
+    flex: 10;
+    /* padding: 1%; */
+    position: relative;
+    /* justify-content: center; */
+    width: 100%;
+    /* height: 100%; */
+}
+
+#toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3% 1.6%;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+#listContainer {
+    overflow: auto;
+    flex: 10;
+    margin: 0 1.5%;
+    height: 100%;
+}
+
+#mainContainer {
+    display: flex;
+    flex: 1;
+    /* margin: 2.5% 0; */
+    /* height: 85%; */
+    overflow: auto;
+    width: 100%;
+    background-color: #f7f7f8;
+    padding-top: 1%;
+}
+
+#sidebar {
+    flex: 1;
+    padding: 1% 1%;
+    box-shadow: 0px -1px 3px 4px rgba(0, 0, 0, .5);
+    z-index: 5;
+}
+
+#accountInfo {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+}
+
+.listElement {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.51% 1%;
+    align-items: center;
+    border-bottom: solid;
+    border-width: 0.5px;
+    border-color: rgba(0,0,0,0.2);
+    /* height: 100%; */
+    /* width: 100%; */
+    flex: 1;
+}
+
+.listButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.listButtons>* {
+    color: white;
+}
+
+.videoButtons>button {
+    margin-left: 3%;
+    width: 25%;
+    min-width: 80px;
+    max-width: 20vw;
+    /* font-size: x-small; */
+    min-height: 30px;
+}
+
+#toolbarButtons {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#toolbarButtons>div {
+    padding-left: 2%;
+}
+
+#title {
+    padding-left: 2.5%;
+    font-weight: bold;
+}
+
+.headerLogo {
+    display: flex;
+    background-image: url(../../mmlogolang.png);
+    height: 100%;
+    width: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+}
+
+#titleHolder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.1);
+}
+
+th:nth-child(1),td:nth-child(1) {
+    padding-left: 1%;
+}
+
+tr {
+    /* display: flex; */
+    /* align-items: center; */
+    padding: 0.2% 1%;
+}
+
+td {
+    flex: 1;
+}
+
+th {
+    flex: 1;
+}
+
+.mainTable {
+    flex: 4;
+    max-height: 50%;
+}
+
+tbody {
+    display: block;
+}
+
+thead {
+    display: block;
+}
+
+.listElement>div {
+    flex: 1;
+    /* border-left-style: solid; */
+    /* min-width: 20vw; */
+    text-overflow: ellipsis;
+    /* max-width: 40vw; */
+}
+
+#listHeader {
+    /* overflow: auto; */
+    font-weight: bold;
+    margin: 0 1.5%;
+}
+
+#listHeader>.listElement:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.col {
+    padding-bottom: 1;
+}
+
+#mainForm {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 20%;
+    flex: 5;
+    /* overflow: visible; */
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2%;
+}
+
+.row {
+    padding-bottom: 1%;
+}
+
+.missionsList {
+    border: black;
+}
+
+.mission:nth-child(odd) {
+    /* background-color: rgba(0,0,0,0.1); */
+}
+
+.mission {
+    padding: 1% 0%;
+    display: flex;
+    white-space: initial;
+    border-bottom: solid;
+    border-width: 0.5px;
+    border-color: rgba(0,0,0,0.2);
+    margin: 0% 1%;
+    background-color: #f7f7f8;
+}
+
+
+#previewWindow {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1%;
+    justify-content: center;
+}
+
+.preview {
+    flex: 1;
+    margin: 3% 0;
+    text-align: center;
+    font-size: xx-large;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.controlPanelViewer {
+    display: flex;
+    flex-direction: row-reverse;
+    /* padding: 1%; */
+    flex: 1;
+    overflow-y: hidden;
+}
+
+.buttonHolder {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    /* justify-content: flex-end; */
+}
+
+.buttonHolder>button {
+    margin-left: 2%;
+}
+
+.logoPreviewImg {
+    height: 80%;
+    width: auto;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex: 1;
+}
+
+.videoPreview {
+    width: 100%;
+    height: auto;
+}
+
+.end-row {
+    position: absolute;
+    bottom: 0;
+}
+
+.offlineStatus {
+    display: inline;
+    padding-left: 10px;
+}
+
+#toolbarTitle {
+    font-weight: bold;
+    font-size: xxx-large;
+    flex: 1;
+    cursor: default;
+    white-space: normal;
+    text-overflow: ellipsis;
+    max-width: 50vw;
+    overflow: hidden;
+    max-height: 100px;
+    width: 50vw;
+    min-width: 200px;
+}
+
+.volumeControl {
+    display: flex;
+    align-items: center;
+    padding: 0.4%;
+    border: 1px solid #b7b7b7;
+    flex: 1;
+}
+
+.volumeControl>* {
+    margin: 0 3%;
+}
+
+.videoButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.videoButtons>div {
+    /* flex: 1; */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+
+  background: rgba(0, 0, 0, .5);
+}
+
+
+#toolbarButtons>button {
+    margin-left: 3%;
+}
+
+iframe.previewIframe {
+    height: 100%;
+    width: 100%;
+}
+
+iframe.previewIframe {
+    height: 1080px;
+    width: 1920px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+}
+
+.missionInput {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.mission.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+.headerFontPreview {
+    font-family: headerFont;
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.missionFontPreview {
+    font-family: missionFont;
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+}
+
+div#popUp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.popUpContainer {
+    max-width: 40%;
+    /* height: 30%; */
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 2px 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0;
+    inline-size: -webkit-fill-available;
+    min-width: 350px;
+    width: 40%;
+}
+
+#popUpForm {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 90%;
+    /* flex: 7; */
+    overflow: visible;
+}
+
+.videoLayer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.videoDuration {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+}
+
+.videoFileName {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+progress[value]::-webkit-progress-value::before {
+  content: '80%';
+  position: absolute;
+  right: 0;
+  top: -125%;
+}
+
+.uploadStatus {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.uploadButtons {
+    display: none;
+}
+
+.buttonHolderFlex {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.loginContainer {
+    /* height: 100%; */
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginHelptext {
+    padding-bottom: 1%;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+#accountImage {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-right: 5px;
+}
+
+.logOut {
+    cursor: pointer;
+    display: flex;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#navigator {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    align-items: center;
+}
+
+.navSpacer {font-weight: bold;}
+
+.listText:last-child {
+    text-align: end;
+}
+
+.listText:last-child {
+    flex: 2;
+}
+
+.listElement>.listButtons{
+    flex: 2
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.finished {
+    animation-name: fadeOff;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes fadeOff {
+    0%   {
+        opacity: 1;
+        visibility: visible;
+    }
+    99%  {opacity: 0;}
+    100% {visibility: hidden;}
+}
+
+#loading {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+}
+
+#listHeader>*>* {
+    cursor: pointer;
+}
+
+.collaborator {
+    display: flex;
+    height: 100% !important;
+}
+
+div#collaborators {
+    display: flex;
+}
+
+.collaboratorImage {
+    flex: 1;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.collaboratorName {
+    flex: 6;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.deleteCollaborator {
+    flex: 1;
+    text-align: right;
+    cursor: pointer;
+}
+
+.collaboratorContent {
+    display: flex;
+    padding-bottom: 1%;
+}
+
+.tabs {
+    display: flex;
+    padding: 0 0 0 1%;
+    align-items: center;
+    /* border-bottom-style: solid; */
+    border-width: 1px;
+    box-sizing: border-box;
+    /* flex: 1; */
+    min-width: 570px;
+}
+
+.tab {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+    /* font-size: x-large; */
+    cursor: pointer;
+    position: relative;
+    transition: all ease-in-out .2s;
+    border-color: #9146ff;
+}
+
+.tab.active {
+    border-color: #9146ff;
+    color: #9146ff;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 0px) {  
+ .tab{
+   font-size: 4.2vw;
+ }
+ .projectTitle{
+   font-size: xx-large;
+ }
+ .uniformButtons {
+    justify-content: space-between;
+ }
+ #toolbarTitle{
+    font-size: xx-large;
+  }
+  .navbar{
+    padding: 0.5rem 0.5rem;
+  }
+  .videoButtons>button {
+    font-size: x-small;
+ } 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+ .tab{
+   font-size: large
+ }
+ .projectTitle{
+   font-size: xx-large;
+ }
+ .uniformButtons {
+    justify-content: flex-end;
+ }
+ .navbar{
+    padding: 0.5rem 2rem;
+  }
+  .videoButtons>button {
+    font-size: inherit;
+ } 
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+ .tab{
+   font-size: x-large
+ }
+ .projectTitle{
+   font-size: xx-large;
+   max-height: 100px;
+ }
+ #toolbarTitle{
+    font-size: xx-large;
+    max-height: 100px;
+  }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+ .tab{
+   font-size: x-large
+ }
+ .projectTitle{
+   font-size: xxx-large;
+   max-height: 140px;
+ }
+ #toolbarTitle{
+    font-size: xxx-large;
+    max-height: 140px;
+  }
+}
+
+@media (max-width: 1200px) {  
+ .projectSubtitle{
+   font-size :large;
+ }
+}
+
+
+@media (min-width: 1200px) {  
+ .projectSubtitle{
+   font-size : x-large;
+ }
+}
+
+.inviteNumber {background-color: rgba(0,0,0,0.2);border-radius: 50%;height: 20px;width: 30px;display: flex;justify-content: center;align-items: center;font-size: initial;}
+
+.inviteText {padding-right: 10%;}
+
+.tabContainer {
+    flex: 10;
+    display: none;
+    margin: 0px 1.5%;
+}
+
+.listContainer {
+    overflow: visible;
+}
+
+.tabContainer.active {
+    display: initial;
+}
+
+video {
+    width: 100%;
+    opacity: 0;
+    transition-duration: 3s;
+}
+
+footer.twitchPurple {
+    background-color: #ffff!important;
+    /* flex: 1; */
+    box-shadow: 0px 1px 4px 3px rgba(0,0,0,0.2);
+}
+
+nav.twitchPurple {
+    background-color: #fff!important;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 1px 4px 3px rgba(0,0,0,0.2);
+}
+
+.tabRow {
+    display: flex;
+}
+
+.searchBar {
+    flex: 1;
+    /* border-bottom-style: solid; */
+    /* border-width: 1px; */
+    /* border-color: rgba(0,0,0,0.4); */
+    /* padding-bottom: 0.2%; */
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.searchBarContainer {
+    width: 50%;
+    margin: 0 1%;
+    max-width: 250px;
+}
+
+.accountHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountInfo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 2px;
+    flex: 0.5;
+}
+
+.startBorderLine {
+    width: 0.4%;
+    /* border-bottom-style: solid; */
+    /* border-width: 1px; */
+    /* border-color: rgba(0,0,0,0.4); */
+}
+
+.buttonContainer>* {
+    margin-left: 1vw;
+}
+
+.buttonContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.accountImage {
+    height: 25px;
+    width: 40px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /* margin-right: 5px; */
+}
+
+.accountInfoStandard>* {
+    /* padding-left: 3%; */
+    /* padding-right: 50px; */
+}
+
+.menuLogOut {
+    display: flex;
+    justify-content: center;
+}
+
+.accountMenu>* {
+    padding-bottom: 2%;
+}
+
+div#navigator2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.headerLogOut {padding-left: 1%;}
+
+.tabWrapper {
+    padding: 2%;
+}
+
+.nameImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#accountName1 {padding-left: 10%;}
+
+.row:last-child {
+    /* padding-top: 1%; */
+}
+
+.noProjects {
+    opacity: 0.7;
+    padding-left: 1%;
+    padding-top: 1%;
+    white-space: break-spaces;
+}
+
+.clickActivate {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+    display: none;
+}
+label#masterVolumeLabel, .volumeNumberLabel {
+    width: 60px;
+}
+
+.buttonsInForm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.missionButtonContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.missionButtonContainer>* {
+    margin-left: 1%;
+}
+
+.tab:after {
+    transition: all ease-in-out .2s;
+    content: "";
+    width: 0;
+    border-bottom: solid;
+    position: absolute;
+    height: 100%;
+    border-color: #9146ff;
+}
+
+.tab.active:after {
+    width: 100%;
+}
+
+.tab.right {
+    justify-content: flex-start;
+}
+
+.tab.left {
+    justify-content: flex-end;
+}
+
+.uniformButtons {
+    display: flex;
+}
+
+.accountMenu>.accountInfo {
+    justify-content: space-evenly;
+}
+
+.listText {
+    overflow: hidden;
+}
+
+div#accountImage2 {
+    margin-right: 5px;
+}
+
+.projectTitle {
+    white-space: normal;
+    text-overflow: ellipsis;
+    max-width: 50vw;
+    overflow: hidden;
+    width: 100%;
+}
+
+div#navigator2>* {
+    max-width: 60vW;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.navMaxLength {
+    max-width: calc(31vw - 220px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttonContainer>* {
+    /* width: 25%; */
+    min-width: 80px;
+    max-width: 20vw;
+}
+
+.videoPreviewHolder {
+    background: #eee url('data:image/svg+xml,\
+   <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"         fill-opacity=".25" >\
+            <rect x="200" width="200" height="200" />\
+            <rect y="200" width="200" height="200" />\
+            </svg>');
+    background-size: 30px 30px;
+}
+
+.logoPreview {
+    background: #999 url('data:image/svg+xml,\
+   <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"         fill-opacity=".50" >\
+            <rect x="200" width="200" height="200" />\
+            <rect y="200" width="200" height="200" />\
+            </svg>');
+    background-size: 30px 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 992px){
+.mdPaddingTop {
+    margin-top: 10px;
+}
+
+}
+
+.videoInlineButtons {display: flex;justify-content: flex-end;flex: 1;margin-left: 4%;overflow: visible !important;}
+
+.videoInlineButtons>* {
+    margin-left: 2%;
+}
+
+.buttonHolderFlex>* {
+    margin-left: 5px;
+}
+
+.rowBreak {
+    white-space: normal;
+}
+
+.rowBreak>* {
+    margin-bottom: 10px;
+}
+
+.mission>* {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.videoHeaders:first-child {padding: 0.375rem 0.75rem;}
+
+.videoHeaders {
+    font-weight: bold;
+}
+
+.mission:first-child {
+}
+
+.videoHeaders:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerAligner {
+    padding-right: 10px;
+}
+
+.videoActionsHeader {
+    flex: 1;
+    margin-left: 4%;
+}
+
+.mission.missionHeader {
+    padding: 0% 1% !important;
+    margin: 0% 0% !important;
+}
+
+.mission:last-child {
+    border: none;
+}
+
+*::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(0,0,0,0.2);
+}
+
+footer {
+    z-index: 10;
+}
+
+.uploadHelpText {
+    white-space: break-spaces;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.draggableArrow {
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.04;
+    font-size: x-large;
+    opacity: 0.7;
+    cursor: n-resize;
+}
+
+.row.toggleHide {
+    padding: 0;
+}
+
+.toggleHide>*>label {
+    padding: 0;
+}
+
+.hiddenGroup>* {
+    display: none !important;
+}
+
+.videoFileName.videoHeaders.d-none.d-lg-flex {}
+
+.videoDuration:last-child {
+    justify-content: flex-end;
+}
+
+#converterList>*>.videoHeaders:first-child {
+    padding: 0.375rem 0;
+}
+
+.onlineDot {
+    display: inline-flex;
+    border-radius: 50%;
+    background-color: #ccc;
+    width: 10px;
+    height: 10px;
+    align-items: center;
+}
+
+.inlineText {
+    display: inline;
+}
+
+input#defaultCheck1 {
+    position: inherit;
+    margin-right: 10px;
+}
+
+
+.adminMode {
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.adminTooltip {
+    padding-right: 10px;
+
+}
+
+div#missionButtons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3% 1.6%;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+#toolbarButtons>button {}
+
+#missionButtonContainer {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#missionButtonContainer>button {
+    margin-left: 0.6%;
+}
+
+.holdTooltip {
+    margin-right: 5px;
+}
+
+.pairContainer {
+    width: 100%;
+    padding: 0 15px;
+    padding-bottom: 1%;
+}
+
+.paircontainer>.row {
+    padding-bottom: 0 !important;
+}
+
+.pairContainer>.row {
+    padding-bottom: 0 !important;
+}
+
+button.btn.btn-success.deleteBtn {
+    height: 10%;
+    bottom: 0;
+    align-self: flex-end;
+}

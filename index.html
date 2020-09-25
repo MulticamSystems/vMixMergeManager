@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./common/css/style.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./common/bootstrap/css/bootstrap.css">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <title id="windowTitle">Multicam Media Merge Transistions</title>
+    </head>
+<body>
+    <a id="downloadAnchorElem" style="display:none"></a>
+    <div id="outerContainer">
+<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark twitchPurple header">
+                
+            <div id="titleHolder">
+                <div class="headerLogo"></div>
+                <a class="navbar-brand">Merge Manager</a>
+            </div>
+            <div class="accountInfo accountInfoStandard d-none d-lg-flex">
+                <a class="navbar-brand" href="./vmixpresets.zip">Download example vMix Project</a>
+            </div>
+            </nav>
+        <div id="mainContainer">
+            <div id="mainDisplay">
+                <div class="loginContainer">
+                    <div class="row">
+                        <div class="col-2">
+                            
+                            Upload preset:
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                              </div>
+                        
+                        </div>
+        
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <button type="button" class="btn btn-success" onclick="downloadPreset()">Download preset</button>
+                        
+                        </div>
+        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="fontSize" class="col-form-label" id="fontSizeLabel">vMix IP:</label>
+                            <input onchange="setIP(this)" class="form-control" type="text" id="vMixIP" value="127.0.0.1">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="fontSize" class="col-form-label" id="fontSizeLabel">vMix Port:</label>
+                            <input onchange="setPort(this)" class="form-control" type="number" id="vMixPort" value="8088">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="letterSpacing" class="col-form-label" id="letterSpacingLabel">Number of inputs:</label>
+                            <input onchange="setNumberOfInputs(this)" class="form-control" type="number" id="numberOfInputs" value="4">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="fontSize" class="col-form-label" id="fontSizeLabel">Input start:</label>
+                            <input onchange="setInputStart(this)" class="form-control" type="number" id="inputStart" value="1">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="letterSpacing" class="col-form-label" id="letterSpacingLabel">MultiView Start:</label>
+                            <input onchange="setMultiViewStart(this)" class="form-control" type="number" id="multiViewStart" value="2">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="fontSize" class="col-form-label" id="fontSizeLabel">Single Input Multiview:</label>
+                            <input onchange="setSingleInputMultiview(this)" class="form-control" type="number" id="singleInputMultiview" value="10">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="letterSpacing" class="col-form-label" id="letterSpacingLabel">Dual Input Multiview 1:</label>
+                            <input onchange="setDualMultiview1(this)" class="form-control" type="number" id="dualMultiview1" value="8">
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-3">
+                            <label for="letterSpacing" class="col-form-label" id="letterSpacingLabel">Dual Input Multiview 2:</label>
+                            <input onchange="setDualMultiview2(this)" class="form-control" type="number" id="dualMultiview1" value="9">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            
+                            <button type="button" class="btn btn-success" onclick="addPair()">Add pair</button>
+                        
+                        </div>
+
+                    </div>
+                    <div class="pairContainer">
+                    	
+                    </div>
+                    <div class="row pairButtons">   
+                        <button type="button" class="btn btn-success col-1 callerBtn" onclick="addNewMission()">Go to Pair 1</button>
+                        <button type="button" class="btn btn-success col-1 callerBtn" onclick="addNewMission()">Go to Pair 2</button>
+
+                    </div>
+                    <div class="row addCallers">   
+                    </div>
+                    <div class="row removeCallers">   
+                    </div>
+                   
+                </div>
+                
+            </div>
+
+    
+           
+        </div>
+
+        <footer class="page-footer navbar-dark bg-dark twitchPurple absoluteFooter">
+            <div class="footer-copyright text-center py-3 copyrightText"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <div style="color: black; display: inline;">
+                    Buy me a coffee:
+                </div>
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="JG54GVR85G5CN" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_NO/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+                </div>
+          
+          </footer>
+    </div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178994684-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-178994684-1');
+    </script>
+    <script src="./common/js/jquery.js"></script>
+    <script src="./common/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
