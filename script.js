@@ -148,12 +148,11 @@ function removeCaller(id) {
 
 function downloadPreset(){
     var downloadObject = {
-        IPAddress,
-        port,
-        numberOfCallers,
-        callerStart,
-        callerMVStart,
-        pairs
+        vmix: state.vmix,
+        numberOfCallers: state.numberOfCallers,
+        callerStart: state.callerStart,
+        callerMVStart: state.callerMVStart,
+        pairs: state.pairs
 
     }
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(downloadObject));
@@ -185,8 +184,7 @@ window.addEventListener('load', function() {
             state.callerStart,
             state.callerMVStart,
             state.pairs
-            state.vmix.address = result.IPAddress;          
-            state.vmix.port = result.port;           
+            state.vmix = result.vmix;                     
             state.numberOfCallers = result.numberOfCallers;          
             state.callerStart = result.callerStart;      
             state.callerMVStart = result.callerMVStart;

@@ -61,23 +61,33 @@
             align-items: center;
             width: 100%;
         }
-        .application-launch, .application-exit {
+        .application-launch {
             background-color: white;
             color: black;
+            width: 120px;
+        }
+        .application-exit, .application-hide {
+            color: white;
+            border: 1px solid white;
+            width: 80px;
+        }
+        .application-launch, .application-exit, .application-hide {
             font-family: 'Lato';
             font-weight: bold;
             font-size: 20px;
             text-align: center;
             border-radius: 7px;
             padding: 10px;
-            width: 146px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
             cursor: pointer;
             transition: background-color .1s ease-in-out;
         }
-        .application-launch:hover, .application-exit:hover {
+        .application-launch:hover {
             background-color: #D4D4D4;
+        }
+        .application-exit:hover, .application-hide:hover {
+            background-color: #333333;
         }
         .application-logo {
             margin-top: 50px;
@@ -92,9 +102,16 @@
             <div class="application-header">vMix Merge Manager</div>
             <div class="application-buttons">
                 <div class="application-launch" onclick='require("electron").shell.openExternal("http://localhost:1501/gui");'>Open GUI</div>
+                <div class="application-hide" onclick="hideWindow()">Hide</div>
                 <div class="application-exit" onclick="window.close()">Exit</div>
             </div>
         </div>
     </div>
+    <script>
+        function hideWindow() {
+            const { BrowserWindow } = require('electron').remote;
+            BrowserWindow.getFocusedWindow().hide();
+        }
+    </script>
 </body>
 </html>

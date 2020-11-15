@@ -1,4 +1,9 @@
-const { app, BrowserWindow } = require('electron')
+const {
+    app,
+    BrowserWindow,
+    Menu,
+    Tray
+} = require('electron')
 const express = require("express");
 const rootPath = require('electron-root-path').rootPath;
 const gui = express();
@@ -9,35 +14,44 @@ const MergeManager = require("./MergeManager.js")
 let mergeManager = new MergeManager(io);
 
 
-function createWindow () {
-  const win = new BrowserWindow({
-    width: 420,
-    height: 280,
-    webPreferences: {
-      nodeIntegration: true
-    },
-    frame: false,
-    fullscreen: false,
-    resizable: false
-  })
+function createWindow() {
+    const win = new BrowserWindow({
+        width: 420,
+        height: 280,
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true
+        },
+        frame: false,
+        fullscreen: false,
+        resizable: false,
+        icon: "./icon.png"
+    })
 
-  win.loadFile('appindex.html')
-  win.setMenu(null);
+    win.loadFile('appindex.html')
+    win.setMenu(null);
+    var appIcon = null;
+    appIcon = new Tray('./icon.png');
+    appIcon.setToolTip('vMix Merge Manager');
+    appIcon.on("click", () => {
+        win.show();
+    })
+    
 }
 
 
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
 })
 
 app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow()
-  }
+    if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow()
+    }
 })
 
 
@@ -66,6 +80,12 @@ gui.get("/common/bootstrap/js/bootstrap.bundle.js", (req, res) => {
 gui.get("/script.js", (req, res) => {
     res.sendFile(path.join(rootPath, "./script.js"));
 });
+gui.get("/mmlogolang.png", (req, res) => {
+    res.sendFile(path.join(rootPath, "./mmlogolang.png"));
+});
+gui.get("/vmixpresets.zip", (req, res) => {
+    res.sendFile(path.join(rootPath, "./vmixpresets.zip"));
+})
 
 gui.post("/api/pairs/:pair/trigger", (req, res) => {
     mergeManager.triggerPair(req.params.pair);
