@@ -1,0 +1,21 @@
+{
+  "name": "vmix-merge-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  },
+  "dependencies": {
+    "electron-root-path": "^1.0.16",
+    "node-fetch": "^2.6.1",
+    "socket.io": "^3.0.1"
+  }
+}

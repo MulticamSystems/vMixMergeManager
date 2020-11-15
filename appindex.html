@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            user-select: none;
+        }
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: url("./common/fonts/Lato-Regular.ttf");
+        }
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: url("./common/fonts/Lato-Bold.ttf");
+        }
+        .application-container {
+            width: 420px;
+            height: 280px;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+        .application-drag-region {
+            -webkit-app-region: drag; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+            height: 50px;
+
+        }
+        .application-background {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .application-header {
+            font-family: 'Lato';
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        .application-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .application-launch, .application-exit {
+            background-color: white;
+            color: black;
+            font-family: 'Lato';
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 7px;
+            padding: 10px;
+            width: 146px;
+            margin-left: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: background-color .1s ease-in-out;
+        }
+        .application-launch:hover, .application-exit:hover {
+            background-color: #D4D4D4;
+        }
+        .application-logo {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="application-drag-region"></div>
+    <div class="application-container">
+        <div class="application-background">
+            <img class="application-logo" src="./common/img/logo.png" width="255"></img>
+            <div class="application-header">vMix Merge Manager</div>
+            <div class="application-buttons">
+                <div class="application-launch" onclick='require("electron").shell.openExternal("http://localhost:1501/gui");'>Open GUI</div>
+                <div class="application-exit" onclick="window.close()">Exit</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
