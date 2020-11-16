@@ -4,14 +4,18 @@ const {
     Menu,
     Tray
 } = require('electron')
+
 const express = require("express");
-const rootPath = require('electron-root-path').rootPath;
 const gui = express();
 const path = require("path")
 const http = require("http").createServer(gui);
 const io = require("socket.io")(http);
 const MergeManager = require("./MergeManager.js")
 let mergeManager = new MergeManager(io);
+
+
+
+
 
 
 function createWindow() {
@@ -56,35 +60,35 @@ app.on('activate', () => {
 
 
 gui.get("/gui", (req, res) => {
-    res.sendFile(path.join(rootPath, "./index.html"));
+    res.sendFile(path.join(__dirname, "./index.html"));
 });
 
 gui.get("/common/css/style.css", (req, res) => {
-    res.sendFile(path.join(rootPath, "./common/css/style.css"));
+    res.sendFile(path.join(__dirname, "./common/css/style.css"));
 });
 gui.get("/css/style.css", (req, res) => {
-    res.sendFile(path.join(rootPath, "./css/style.css"));
+    res.sendFile(path.join(__dirname, "./css/style.css"));
 });
 gui.get("/common/bootstrap/css/bootstrap.css", (req, res) => {
-    res.sendFile(path.join(rootPath, "./common/bootstrap/css/bootstrap.css"));
+    res.sendFile(path.join(__dirname, "./common/bootstrap/css/bootstrap.css"));
 });
 gui.get("/common/js/jquery.js", (req, res) => {
-    res.sendFile(path.join(rootPath, "./common/js/jquery.js"));
+    res.sendFile(path.join(__dirname, "./common/js/jquery.js"));
 });
 gui.get("/common/js/socket.io.js", (req, res) => {
-    res.sendFile(path.join(rootPath, "./common/js/socket.io.js"));
+    res.sendFile(path.join(__dirname, "./common/js/socket.io.js"));
 });
 gui.get("/common/bootstrap/js/bootstrap.bundle.js", (req, res) => {
-    res.sendFile(path.join(rootPath, "./common/bootstrap/js/bootstrap.bundle.js"));
+    res.sendFile(path.join(__dirname, "./common/bootstrap/js/bootstrap.bundle.js"));
 });
 gui.get("/script.js", (req, res) => {
-    res.sendFile(path.join(rootPath, "./script.js"));
+    res.sendFile(path.join(__dirname, "./script.js"));
 });
 gui.get("/mmlogolang.png", (req, res) => {
-    res.sendFile(path.join(rootPath, "./mmlogolang.png"));
+    res.sendFile(path.join(__dirname, "./mmlogolang.png"));
 });
 gui.get("/vmixpresets.zip", (req, res) => {
-    res.sendFile(path.join(rootPath, "./vmixpresets.zip"));
+    res.sendFile(path.join(__dirname, "./vmixpresets.zip"));
 })
 
 gui.post("/api/pairs/:pair/trigger", (req, res) => {
