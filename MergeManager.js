@@ -53,11 +53,11 @@ class MergeManager {
         this._state = state;
         this.sendvMix();
     }
-    triggerPair(pair) {
+    async triggerPair(pair) {
         if(pair != this._state.activePair){
             this._state.activePair = pair;
-            this.vMixCommand("Function=Merge&Input=" + this.selectInput());
-            setTimeout(function(){this.sendvMix();}, 200)
+            await this.vMixCommand("Function=Merge&Input=" + this.selectInput());
+            await this.sendvMix();
         }
         this.sendState();
     }
