@@ -1,8 +1,26 @@
 {
-  "name": "vmix-merge-manager",
+  "name": "vmixmergemanager",
   "version": "1.0.0",
-  "description": "",
+  "description": "Merge Manager for vMix",
   "main": "main.js",
+  "build": {
+		"productName": "vMix Merge Manager",
+		"appId": "mergemanager.multicammedia.no",
+		"win": {
+			"target": "nsis"
+		},
+		"nsis": {
+			"artifactName": "mergemanager-win64.exe",
+			"createStartMenuShortcut": true,
+			"perMachine": true,
+			"oneClick": false,
+			"allowElevation": true,
+			"allowToChangeInstallationDirectory": true,
+			"installerIcon": "icon.ico",
+			"installerSidebar": "mminst.bmp",
+			"uninstallerSidebar": "mminst.bmp"
+		}
+	},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
@@ -11,10 +29,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.1.5"
+    "electron": "^10.1.5",
+    "electron-winstaller": "^4.0.1"
   },
   "dependencies": {
     "electron-root-path": "^1.0.16",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "socket.io": "^3.0.1"
   }
