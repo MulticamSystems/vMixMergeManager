@@ -35,7 +35,7 @@ function createWindow() {
     win.loadFile('appindex.html')
     win.setMenu(null);
     var appIcon = null;
-    appIcon = new Tray('./icon.png');
+    appIcon = new Tray(path.join(__dirname,'./icon.png'));
     appIcon.setToolTip('vMix Merge Manager');
     appIcon.on("click", () => {
         win.show();
