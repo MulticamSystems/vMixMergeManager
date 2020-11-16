@@ -14,6 +14,20 @@ class ClientConnection {
             refresh();
         })
         this.socket.emit("get-state", "")
+        this.socket.on("disconnect", () => {
+            showDisconnectOverlay();
+        })
+        this.socket.on("connect", () => {
+            hideDisconnectOverlay();
+        })
+        setInterval(() => {
+            if (this.socket.connected === false || this.socket.disconnected === true) {
+                showDisconnectOverlay();
+            }
+            else {
+                hideDisconnectOverlay();
+            }
+        }, 1000)
     }
     updateState(state) {
         this.socket.emit("set-state", JSON.stringify(state))
@@ -22,6 +36,12 @@ class ClientConnection {
 
 let cm = new ClientConnection();
 
+function showDisconnectOverlay() {
+    $('.disconnect-overlay-wrapper').fadeIn();
+}
+function hideDisconnectOverlay() {
+    $('.disconnect-overlay-wrapper').fadeOut();
+}
 
 function addPair(){
     pairObject = {
